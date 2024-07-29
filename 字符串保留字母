@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+void function()
+{
+char *str=malloc(sizeof(char)*100);
+char*str2=malloc(sizeof(char)*100);
+scanf("%s",str); 
+int j=0;
+for(int i;str[i]!='\0';i++)
+{
+if(str[i]>='a'&&str[i]<='z'||str[i]>='A'&&str[i]<='Z')
+str2[j++]=str[i];
+}
+str2[j]='\0';
+printf("%s",str2);
+free(str);
+}

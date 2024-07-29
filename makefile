@@ -1,5 +1,6 @@
 include lib.mk
-CC = gcc
+#CC = gcc
+CC=clang
 BUILD_DIR = build
 BIN_DIR = bin
 src_path := $(shell pwd) $(SIR)
@@ -13,5 +14,9 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 $(TARGET): $(OBJS)
 	@mkdir -p $(@D)
 	$(CC) $(LDFLAGS) $(OBJS) -o $@ $(LDLIBS)
+size:
+	@echo "***************************build sucess*************************************************"
+	@echo "Size of $(TARGET):"
+	@stat -c%s "$(TARGET)"
 clean:
 	rm -rf $(BUILD_DIR) $(BIN_DIR)

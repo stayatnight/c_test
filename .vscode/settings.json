@@ -1,0 +1,11 @@
+{
+  "C_Cpp.clang_format_path": "../clang-format",
+  "C_Cpp.clang_format_style": "file",
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "stdio.h": "c",
+    "string.h": "c",
+    "stdint.h": "c",
+    "hello word": "c"
+  }
+}

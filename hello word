@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+typedef struct Node
+{
+int number;
+int score;
+struct Node *next;
+} Node;
+Node*head_insert(Node*head,int num,int sc)
+{
+    Node*newNode=malloc(sizeof(Node));
+    newNode->number=num;
+    newNode->score=sc;
+    head->next=newNode;
+return head;
+}
+
+
+int main(void)
+{
+
+return 0;
+}
