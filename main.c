@@ -39,6 +39,18 @@ void free_list(Node*head)
     free(head);
 }
 #endif
+#if EMPTYHEAD==0
+Node*head_insert(Node*head,int num,int sc)
+{
+    Node*newNode=malloc(sizeof(Node));
+    newNode->number=num;
+    newNode->score=sc;
+    newNode->next=head;
+    head=newNode;
+    return head;
+}
+
+#endif
 int main(void)
 {
 #if(EMPTYHEAD==1)
@@ -50,5 +62,7 @@ head_insert(head,30,4);
 print_list(head);
 free_list(head);
 #endif
+
+
 return 0;
 }
