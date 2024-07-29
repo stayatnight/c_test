@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#define EMPTYHEAD 0
+#define EMPTYHEAD 1
 
 typedef struct Node
 {
