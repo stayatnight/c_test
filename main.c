@@ -17,11 +17,12 @@ Node*head_insert(Node*head,int num)
 return head;
 }
 void print_list(Node*head)
-{    Node* current = head->next; 
-    while(current!=NULL)
+{    
+    while(head!=NULL)
     {
-        printf("%d \n",current->number);
-        current=current->next;
+        printf("%d",head->number);
+        printf("\n");
+        head=head->next;
     }
 }
 void free_list(Node*head)
@@ -59,29 +60,24 @@ Node* fast =list, *slow = list,*temp;
     slow->next=NULL;
     return temp;
 }
+Node* makeList() {
+    int x;
+    Node* pNewCell;
+    if (scanf("%d", &x) == EOF) {
+//使用ctrl+d结束输入,在linux下
+        printf("\n");
+        return NULL;
+    } else {
+        pNewCell = (Node*) malloc(sizeof(Node));
+        pNewCell->number = x;
+        pNewCell->next = makeList();
+        return pNewCell;
+    }
+}
 int main(void)
 {
-#if(EMPTYHEAD==1)
-Node*head=malloc(sizeof(Node));
-head->next=NULL;
-int num;
-while(~scanf("%d",&num))
-{
-    if(num==-1)
-    {
-    printf("\n");
-        break;
-    }
-    head=head_insert(head,num);
-}
-int j;
-Node*temp_list=split(head);
-print_list(head);
-print_list(temp_list);
-int test[]={1,2,2,3};
-int *a =test;
-#endif
-free_list(head);
-free_list(temp_list);
+Node*List=makeList();
+print_list(List);
+free_list(List);
 return 0;
 }
