@@ -1,0 +1,1 @@
+clang --target=armv7em-none-eabi -mcpu=cortex-m4 -mthumb -c main.c -o main.o
