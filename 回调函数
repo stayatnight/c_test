@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include<stdarg.h>
+typedef struct test
+{
+int(*sum)(int a,int b);
+int(*sub)(int a,int b);
+int(*mul)(int a,int b);
+int(*div)(int a,int b);
+}Cal;
+int sum(int a, int b)
+{
+    return a+b;
+}
+int sub(int a, int b)   
+{   
+    return a-b;
+}   
+int mul(int a, int b)   
+{   
+    return a*b;
+}   
+int dlv(int a, int b)   
+{   
+    if (b == 0)
+        return -1;
+    else
+        return a/b;
+}
+
+int main()
+{
+Cal cal_test;
+cal_test.sum = sum;
+cal_test.sub = sub;
+cal_test.mul = mul;
+cal_test.div = dlv;
+printf("sum = %d\n",cal_test.sum(10,2));
+printf("sub = %d\n",cal_test.sub(10,2));
+printf("mul = %d\n",cal_test.mul(10,2));
+printf("div = %d\n",cal_test.div(10,2));    
+    return 0;
+}

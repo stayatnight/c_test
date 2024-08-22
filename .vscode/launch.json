@@ -5,7 +5,7 @@
             "name": "C/C++: Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/${fileBasenameNoExtension}.out",
+            "program": "${workspaceFolder}/bin/app",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -20,7 +20,7 @@
                 }
             ],
             "miDebuggerPath": "/usr/bin/gdb",
-            "preLaunchTask": "g++ build active file",
+            "preLaunchTask": "g++ build",
             "internalConsoleOptions": "openOnSessionStart"
         }
     ]

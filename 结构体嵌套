@@ -1,0 +1,36 @@
+#include"stdio.h"
+#include"stdlib.h"
+#include"string.h"
+struct  pr_relation_b;
+static int sum(int a, int b)
+{
+    return a+b;
+}
+static int  mul(int a, int b)
+{
+    return a*b;
+}
+typedef int (*fun)(int,int);
+int mul_fun(fun a, int b)
+{
+    return a(b,b);
+}
+#define FOO(a,b) do {sum(a,b);mul(a,b);} while(0)
+struct pr_relation_b
+{
+    int score;
+};
+struct pr_relation_a
+{
+int a;
+struct pr_relation_b b;
+};
+
+int main(void)
+{
+struct pr_relation_a test_a;
+test_a.b.score=100;
+printf("%ld\n",sizeof(test_a)*4);
+int*pr_int=1000;
+return 0;
+}

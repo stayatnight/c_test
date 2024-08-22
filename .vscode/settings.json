@@ -7,5 +7,6 @@
     "string.h": "c",
     "stdint.h": "c",
     "hello word": "c"
-  }
+  },
+  "Codegeex.EnableExtension": false
 }
