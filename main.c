@@ -1,64 +1,12 @@
 #include"stdio.h"
 #include"stdlib.h"
 #include"string.h"
-typedef struct branch
-{
-int data;
-struct branch*next;
-}*branchroot;
-typedef struct node
-{
-int data;
-struct node*next;
-}*list;
-branchroot create_list()
-{
-    branchroot head=malloc(sizeof(struct branch));
-    head->data=0;
-    head->next=NULL;
-    return head;
-}
-
-branchroot append_list(branchroot List,int data)
-{
-if(List==NULL)
-return NULL;
-branchroot root=List;
-branchroot Node=malloc(sizeof(struct branch));
-Node->data=data;
-while(List->next!=NULL)
-{
-List->next=List->next->next;
-}
-List->next=Node;
-Node->next=NULL;
-return root;
-}
-void print_list(branchroot List)
-{
-if(List==NULL)
-{
-printf("List is empty\n");
-return ;
-}
-List->next=List->next->next;
-while(List->next!=NULL)
-{
-    printf("hello\n");
-    printf("%d\n",List->data);
-List->next=List->next->next;
-}
-}
-
+typedef struct Node{
+    int data;
+    struct Node *next;
+}*List;
 int main(void)
 {
-branchroot head=create_list();
-append_list(head,1);
-append_list(head,2);
-append_list(head,3);
-append_list(head,4);
-print_list(head);
 
-free(head);
 return 0;
 }

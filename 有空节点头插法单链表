@@ -1,0 +1,49 @@
+#include"stdio.h"
+#include"stdlib.h"
+#include"string.h"
+typedef struct Node
+{
+    int data;
+    struct Node *next;
+}*List;
+//头插法，有空头结点头插法
+//头插法，无空头结点头插法
+//尾插法
+List create_list(void)
+{
+    List head;
+    head = (List)malloc(sizeof(struct Node));
+    head->data = 0;
+    head->next = NULL;
+    return head;
+}
+//带头结点头插法
+void insert_node(List head, int data)
+{
+List temp;
+temp = (List)malloc(sizeof(struct Node));
+temp->data = data;
+temp->next = head->next;
+head->next = temp;
+}
+void print_list(List head)
+{
+    while (head->next != NULL)
+    {
+        printf("%d ", head->next->data);
+        head = head->next;
+    }
+    printf("\n");
+}
+int main(void)
+{
+List head;
+head = create_list();
+insert_node(head, 1);
+insert_node(head, 2);
+insert_node(head, 3);
+insert_node(head, 4);
+insert_node(head, 5);
+print_list(head);
+return 0;
+}

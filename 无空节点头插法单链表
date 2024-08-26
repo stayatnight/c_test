@@ -1,0 +1,40 @@
+#include"stdio.h"
+#include"stdlib.h"
+#include"string.h"
+typedef struct Node{
+    int data;
+    struct Node *next;
+}*List;
+List create_list(void)
+{
+    List head = malloc(sizeof(*head));
+    head->next = NULL;
+    head->data = 0;
+    return head;
+}
+List insert_list(List head, int data)
+{
+    List temp=malloc(sizeof(*temp));
+    temp->data = data;
+    temp->next = head;
+    return temp;
+}
+void print_list(List head)
+{
+    while(head->next!=NULL)
+    {
+        printf("%d ",head->data);
+        head=head->next;
+    }
+}
+int main(void)
+{
+List head=create_list();
+head=insert_list(head,1);
+head=insert_list(head,2);
+head=insert_list(head,3);
+head=insert_list(head,4);
+print_list(head);
+free(head);
+return 0;
+}
