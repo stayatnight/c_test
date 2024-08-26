@@ -1,0 +1,29 @@
+#include"stdio.h"
+#include"stdlib.h"
+#include"string.h"
+typedef struct Node{
+int data;
+struct Node *next;
+struct Node*prev;
+}*zjlist;
+zjlist create_node(int data)
+{
+zjlist temp=(zjlist)malloc(sizeof(struct Node));
+temp->data=data;
+temp->next=temp;
+temp->prev=temp;
+return temp;
+}
+void print_list(zjlist head)
+{
+//zjlist temp=
+}
+void insert_node(zjlist head,int data)
+{
+   
+}
+
+int main(void)
+{
+return 0;
+}

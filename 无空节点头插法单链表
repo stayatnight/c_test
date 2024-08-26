@@ -15,6 +15,10 @@ List create_list(void)
 List insert_list(List head, int data)
 {
     List temp=malloc(sizeof(*temp));
+    if (head==NULL)
+    {
+      //  *head=newNode;
+    }
     temp->data = data;
     temp->next = head;
     return temp;
