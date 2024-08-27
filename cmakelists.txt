@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.5)
+project(CTEST)
+option(example_A "build project A" ON)
+option(example_B "build project B" ON)
+if() 
