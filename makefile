@@ -3,6 +3,7 @@ include lib.mk
 CC=clang
 BUILD_DIR = build
 BIN_DIR = bin
+#LDFLAGS=WL
 src_path := $(shell pwd) $(SIR)
 SRC_FILES = $(foreach dir, $(src_path), $(wildcard $(dir)/*.c))
 OBJS = $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRC_FILES))
