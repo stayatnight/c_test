@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include<stdint.h>
+typedef enum
+{
+duck_1,
+duck_2,
+duck_3,
+duck_4,
+}ducks;
+//如果有大量的枚举变量需要定义？这个只能手动或者用python 脚本生成
+int main()
+{
+ducks yellow_duck;//枚举变量只能赋值为枚举类
+yellow_duck=duck_2;
+printf("yellow_duck is %d\n",yellow_duck);
+} 
+//枚举变量是一种变量而不是一种组合，不能像struct那样使用 .

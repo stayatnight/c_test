@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include<stdint.h>
+#define LOG_EN 2
+typedef enum
+{
+duck_1,
+duck_2,
+duck_3,
+duck_4,
+}ducks;
+#if LOG_EN&&LOG_EN==1 
+int LOG(char*message)
+{
+    printf("%d|%s|%s\n",__LINE__,__FUNCTION__,message);
+    return 0;
+}
+#endif
+#if LOG_EN&&LOG_EN==2
+#define LOG(fmt, ...) \
+    printf("%s|%s:%d|" fmt "\n", __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#endif  
+int main()
+{
+ducks yellow_duck;//枚举变量只能赋值为枚举类
+yellow_duck=duck_2;
+printf("yellow_duck is %d\n",yellow_duck);
+LOG("fuck the world!");
+int i=6;
+char *msg ="Are you ok ?";
+LOG("hello is %d",i);
+LOG("%s",msg);
+}

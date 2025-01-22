@@ -40,5 +40,5 @@ printf("sum = %d\n",cal_test.sum(10,2));
 printf("sub = %d\n",cal_test.sub(10,2));
 printf("mul = %d\n",cal_test.mul(10,2));
 printf("div = %d\n",cal_test.div(10,2));    
-    return 0;
+return 0;
 }

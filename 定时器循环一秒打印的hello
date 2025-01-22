@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include<stdint.h>
+#include<signal.h>
+#include<unistd.h>
+#include<sys/time.h>
+void signal_handler(int signum)
+{
+    switch(signum){
+        case SIGALRM:
+             printf("hello\r\n");
+            // exit(signum);
+             break;
+        default:
+             printf("unknown signal (%d) received",signum);
+             exit(signum);
+         }
+}
+
+int main()
+{
+struct itimerval timer;
+signal(SIGALRM,signal_handler);//如果没有设置会触发默认的
+timer.it_value.tv_sec=1;//定时器初始值 秒
+timer.it_value.tv_usec=0;//定时器初始值 毫秒
+timer.it_interval.tv_sec=1;//定时器间隔 秒
+timer.it_interval.tv_usec=0;//定时器间隔值 毫秒
+setitimer(ITIMER_REAL,&timer,NULL);
+while(1){
+//printf("test\r\n");
+}
+return 0;
+}
